@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>1:1 실시간 채팅</title>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' ws://localhost:8080 http://localhost:8080 https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:;">
+        <style>
+        #chatBox { border: 1px solid #ccc; width: 350px; height: 300px; overflow-y: scroll; margin-bottom: 10px; padding: 5px; }
+        .input-group { margin-bottom: 5px; }
+    </style>
+    </head>
+
+    <body>
+        <h2>SpringBoot 1:1 채팅 테스트</h2>
+
+        <div>
+            <label> 내 아이디 : <input type="text" id="myId" value="userA"></label>
+            <button id="connectBtn">서버 연결</button>
+            <button id="disconnectBtn">서버 연결 해제</button>
+        </div>
+
+        <hr>
+
+        <div class="input-group">
+            <label> 상대방 아이디 : <input type="text" id="targetId" value="userB"></label>
+            <label> 메시지 : <input type="text" id="messageInput"></label>
+            <button id="emojiBtn">이모지!!!</button>
+            <button id="sendBtn">전송</button>
+        </div>
+
+        <div style="margin-top: 5px; height: 15px;">
+            <span id="errorMsg" style="color: red; font-size: 12px;"></span>
+        </div>
+
+        <div id="emojiPickerContainer" style="display: none; position: absolute; z-index: 1000; background: white; border: 1px solid #ccc;">
+            <emoji-picker></emoji-picker>
+        </div>
+
+        <div id="chatBox" style="margin-top:20px; border: 1px solid #ccc; height: 200px; padding: 10px; overflow-y:scroll;">
+        </div>
+        
+        <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@1/index.js"></script>
+        <script src="../../node_modules/@stomp/stompjs/bundles/stomp.umd.min.js"></script>
+        <script src="./chat.js"></script>
+    </body>
+</html>

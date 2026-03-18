@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>로그인</title>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+
+        <style>
+            body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f4f4f4;}
+            .login-box {
+                background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;
+            }
+            input { padding: 8px; margin-bottom: 10px; width: 80%;}
+            button { padding: 10px 20px; cursor: pointer;}
+        </style>
+    </head>
+    <body>
+        <div class="login-box">
+            <h2>대화 접속</h2>
+            <input type="text" id="myIdInput" placeholder="내 아이디를 입력하세요" autofocus>
+            <br>
+            <button id="loginBtn">입장하기</button>
+            <div id="errorMsg" style="color: red; font-size: 12px; margin-top: 10px;"></div>
+        </div>
+        <script src="./login.js"></script>
+    </body>
+</html>
